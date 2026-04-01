@@ -1,0 +1,62 @@
+:root {
+  --bg-0: #050a0d;
+  --bg-1: #0e161a;
+  --line: #294046;
+  --glow: #7ec3a8;
+  --font-main: 'Noto Sans SC', 'Source Han Sans SC', 'PingFang SC', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'JetBrains Mono', 'Menlo', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-main);
+  color: #d6dfd4;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(126, 195, 168, 0.08), transparent 35%),
+    radial-gradient(circle at 88% 80%, rgba(121, 141, 171, 0.08), transparent 42%),
+    linear-gradient(160deg, var(--bg-0), var(--bg-1));
+}
+
+#app {
+  position: fixed;
+  inset: 0;
+  border: 0;
+  box-shadow: none;
+}
+
+canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  image-rendering: auto;
+}
+
+/* tiny cinematic scanline layer */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 48%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 52%,
+    transparent 100%
+  );
+  background-size: 100% 4px;
+}
