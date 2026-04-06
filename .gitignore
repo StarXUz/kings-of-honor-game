@@ -29,3 +29,5 @@ coverage/
 .cache/
 .temp/
 tmp/
+tmp_audio/
+game-demo/tmp_*.wav

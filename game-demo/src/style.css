@@ -60,3 +60,112 @@ body::after {
   );
   background-size: 100% 4px;
 }
+
+.dialogue-overlay {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: min(420px, calc(100vw - 32px));
+  max-height: min(62vh, 720px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid rgba(224, 186, 118, 0.35);
+  border-radius: 16px;
+  background:
+    linear-gradient(180deg, rgba(48, 25, 17, 0.96), rgba(18, 20, 24, 0.96)),
+    linear-gradient(135deg, rgba(234, 176, 94, 0.08), transparent 50%);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  z-index: 40;
+}
+
+.dialogue-overlay.hidden {
+  display: none;
+}
+
+.dialogue-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f0dbb1;
+}
+
+.dialogue-status {
+  min-height: 18px;
+  font-size: 12px;
+  color: #b7c8bf;
+}
+
+.dialogue-log {
+  overflow: auto;
+  min-height: 220px;
+  max-height: 42vh;
+  padding-right: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dialogue-item {
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+.dialogue-item.system {
+  background: rgba(67, 87, 83, 0.36);
+}
+
+.dialogue-item.ally {
+  background: rgba(103, 68, 40, 0.42);
+}
+
+.dialogue-item.player {
+  background: rgba(40, 72, 92, 0.42);
+}
+
+.dialogue-speaker {
+  margin-bottom: 4px;
+  font-size: 12px;
+  color: #e7c384;
+}
+
+.dialogue-content {
+  line-height: 1.5;
+  color: #f5eee1;
+  white-space: pre-wrap;
+}
+
+.dialogue-composer {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 8px;
+}
+
+.dialogue-input,
+.dialogue-send,
+.dialogue-close {
+  border: 1px solid rgba(146, 182, 170, 0.28);
+  border-radius: 10px;
+  font: inherit;
+}
+
+.dialogue-input {
+  min-width: 0;
+  padding: 10px 12px;
+  color: #f3eee3;
+  background: rgba(15, 18, 22, 0.88);
+}
+
+.dialogue-send,
+.dialogue-close {
+  padding: 10px 14px;
+  cursor: pointer;
+  color: #f3eee3;
+  background: rgba(39, 58, 63, 0.92);
+}
+
+.dialogue-send:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
